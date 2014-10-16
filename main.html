@@ -1,0 +1,40 @@
+<html>
+<head>
+    <!--/**
+     * Created by Sven Charleer @ KU Leuven on 30/07/14.
+     */
+         -->
+
+    <title>Resource Overview</title>
+    <script type="text/javascript" src="js/crossfilter.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/d3.min.js"></script>
+
+    <script type="text/javascript" src="../data/load.js"></script>
+    <script type="text/javascript" src="eventCount.js"></script>
+    <link rel="stylesheet" href="eventCount.css">
+
+    <script type="application/javascript">
+
+
+        function loadWidgets()
+        {
+            var data = <%- JSON.stringify(dataset) %>;
+
+            var main =  new eventCount();
+            main.init(__data, "Total","#mainVisualization","#content");
+        }
+
+    </script>
+</head>
+<body onload="javascript:load(loadWidgets);">
+
+
+<div id="mainVisualization">
+
+</div>
+
+
+
+</body>
+</html>
